@@ -50,7 +50,16 @@ public class WriterPoiImpl implements Writer {
 
     @Override
     public void writeCountedData(List<CountedDataDto> dataList) {
-
+        double totalDistance = 0.0;
+        for (int i=0;i<dataList.size();i++){
+            Row row = sheet.createRow(i+1);
+            CountedDataDto dataDto = dataList.get(i);
+            row.createCell(4).setCellValue(dataDto.getDeltaTime());
+            row.createCell(5).setCellValue(dataDto.getSpeed());
+            row.createCell(6).setCellValue(dataDto.getDistance());
+            totalDistance += dataDto.getDistance();
+        }
+        sheet.getRow(1).createCell(9).setCellValue(totalDistance);
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.List;
 
 
 public class DataReaderTest {
-    private final String TEST_FOLDER_PATH = "C:/Users/istre/Downloads/Практика";
+    private final String TEST_FOLDER_PATH = "C:/Users/Илья/Downloads/практика";
     private final String TEST_FILE_PATH = TEST_FOLDER_PATH + "/145-4_lac.csv";
     private final DataReader dataReader = new DataReaderImpl();
 
